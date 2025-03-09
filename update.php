@@ -67,7 +67,7 @@ mysqli_close($link);
 
             <div class="form-group">
                 <label for="pfp">Photo de profil</label>
-                <img src="<?= htmlspecialchars($user['pfp']) ?>" alt="Photo de profil" width="25" height="25">
+                <img src="<?= htmlspecialchars($user['pfp']) ?>" alt="Photo de profil" width="50" height="50">
                 <input type="file" id="pfp" name="pfp">
             </div>
 
@@ -78,4 +78,3 @@ mysqli_close($link);
 
 </body>
 </html>
-
