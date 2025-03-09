@@ -37,13 +37,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_stmt_execute($query)) 
     {
         echo "<script>
-             alert('Utilisateur mis à jour avec succès !'); 
+             alert('Informations modifiées avec succès !'); 
              window.location.href='read.php';
              </script>";
     } 
     else 
     {
-        echo "Erreur lors de la mise à jour : " . mysqli_error($link);
+        echo "Une erreur a été rencontrée lors de la modfication. Les nouvelles données n'ont pas été sauvegardées : " . mysqli_error($link);
     }
 
     mysqli_stmt_close($query);
