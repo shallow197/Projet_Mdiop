@@ -16,16 +16,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $profile_pic = $new_file;
     }
 
-    $sql = "INSERT INTO users(nom, prenom, login, password, pfp)  VALUES ('$name', '$prenom', '$login', '$password', '$profile_pic')";
-
+    $query = "INSERT INTO users(nom, prenom, login, password, pfp)  VALUES ('$name', '$prenom', '$login', '$password', '$profile_pic')";
+    $result = mysqli_query($link, $query);
   
-    if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Utilisateur ajouté avec succès !'); window.location.href='http://localhost:8080/projet_php/create.html';</script>";
-    } else {
-        echo "Erreur lors de l'ajout de l'utilisateur : " . $conn->error;
+    if ($result) 
+    {
+        echo "<script>
+	      alert('Utilisateur ajouté avec succès!'); 
+              header( Location: 'http://localhost:8080/projet_php/create.html');
+ 	      </script>";
+    } 
+    else 
+    {
+        echo "Erreur lors de l'ajout : " . mysqli_error($link);
     }
 
   
-    $conn->close();
+    mysqli_close($link);
 }
 ?>
