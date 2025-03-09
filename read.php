@@ -13,7 +13,7 @@ include 'connection.php';
 <body>
 
 <header>
-    <h1>Liste</h1>
+    <h1>Liste d'utilisateurs</h1>
 </header>
 
 <nav>
