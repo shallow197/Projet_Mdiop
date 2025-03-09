@@ -35,7 +35,7 @@ include 'connection.php';
                 </tr>
             <tbody>
             <?php
-                $sql = "SELECT id, nom, prenom, login, pfp FROM users";
+                $query = "SELECT id, nom, prenom, login, pfp FROM users";
                 $result = mysqli_query($link, $query);
 
                 if ($result->num_rows > 0) {
