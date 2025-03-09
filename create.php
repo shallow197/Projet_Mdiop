@@ -2,17 +2,18 @@
 	include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   
-    $name = $_POST["name"];
+
     $prenom = $_POST["prenom"];
+    $name = $_POST["name"];
     $password = password_hash($_POST['mdp'], PASSWORD_BCRYPT);
     $login = $_POST["login"];
     $profile_pic = "";
-    if (isset($_FILES["pfp"]) && $_FILES["pfp"]["error"] == 0) {
-        $target_dir = "uploads/";  // Dossier où stocker les images
-        $target_file = $target_dir . basename($_FILES["pfp"]["name"]);
-        move_uploaded_file($_FILES["pfp"]["tmp_name"], $target_file);
-        $profile_pic = $target_file;
+    if (isset($_FILES["pfp"])) {
+	    $file = basename($_FILES['pfp']['name']);
+            $tmp = $_FILES['pfp']['tmp_name'];
+            $new_file = "pics/" . $file);
+            move_uploaded_file($tmp, $new_file);
+            $profile_pic = $new_file;
     }
 
     $sql = "INSERT INTO users(nom, prenom, login, password, pfp)  VALUES ('$name', '$prenom', '$login', '$password', '$profile_pic')";
