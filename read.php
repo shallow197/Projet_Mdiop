@@ -40,7 +40,7 @@ include 'connection.php';
 
                 if ($result->num_rows > 0) {
                    while ($row = mysqli_fetch_assoc($result)) {
-                        $profile_pic = htmlspecialchars($row["pfp"]);
+                    $profile_pic = !empty($row["pfp"]) ? htmlspecialchars($row["pfp"]) : "pics/image.png";
                         
                         echo "<tr>
                                 <td>" . htmlspecialchars($row["id"]) . "</td>
