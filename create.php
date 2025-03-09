@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES["pfp"])) {
 	    $file = basename($_FILES['pfp']['name']);
             $tmp = $_FILES['pfp']['tmp_name'];
-            $new_file = "pics/" . $file);
+            $new_file = "pics/" . $file;
             move_uploaded_file($tmp, $new_file);
             $profile_pic = $new_file;
     }
