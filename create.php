@@ -3,7 +3,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
-    $nom = $_POST["name"];
+    $name = $_POST["name"];
     $prenom = $_POST["prenom"];
     $password = password_hash($_POST['mdp'], PASSWORD_BCRYPT);
     $login = $_POST["login"];
@@ -15,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $profile_pic = $target_file;
     }
 
-    $sql = "INSERT INTO users(nom, prenom, login, password, pfp)  VALUES ('$nom', '$prenom', '$login', '$password', '$profile_pic')";
+    $sql = "INSERT INTO users(nom, prenom, login, password, pfp)  VALUES ('$name', '$prenom', '$login', '$password', '$profile_pic')";
 
   
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Utilisateur ajouté avec succès !'); window.location.href='http://localhost:8080/projet_diop/utilisateur/utilisateur/create.html';</script>";
+        echo "<script>alert('Utilisateur ajouté avec succès !'); window.location.href='http://localhost:8080/projet_php/create.html';</script>";
     } else {
         echo "Erreur lors de l'ajout de l'utilisateur : " . $conn->error;
     }
