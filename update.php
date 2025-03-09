@@ -1,22 +1,28 @@
 <?php
 include 'connection.php';
 
-if (isset($_GET['id'])) {
+if (isset($_GET['id'])) 
+{
     $id = intval($_GET['id']); 
-    $query = $link->prepare("SELECT * FROM users WHERE id = ?");
-    $query->bind_param("i", $id);
-    $query->execute();
-    $result = $query->get_result();
-    $user = $result->fetch_assoc();
+    $query = mysqli_prepare($link, "SELECT * FROM users WHERE id = ?");
+    mysqli_stmt_bind_param($query, "i", $id);
+    mysqli_stmt_execute($query);
+    $result = mysqli_stmt_get_result($query);
+    $user = mysqli_fetch_assoc($result);
 
-    if (!$user) {
+    if (!$user) 
+    {
         echo "Utilisateur inexistant.";
         exit();
     }
-} else {
+} 
+ else 
+ {
     echo "ID invalide.";
     exit();
-}
+ }
+
+mysqli_close($link);
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +31,7 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" type="text/css" href="update.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modifier utilisateur</title>
+    <title>Page de modification</title>
 </head>
 <body>
 
@@ -35,7 +41,7 @@ if (isset($_GET['id'])) {
 
 <nav>
     <a href="http://localhost:8080/projet_php/read.php">Liste des utilisateurs</a>
-    <a href="http://localhost:8080/projet_php/create.html">Ajout d' utilisateurs</a>
+    <a href="http://localhost:8080/projet_php/create.html">Ajout d'utilisateurs</a>
 </nav>
 
 <div class="container">
@@ -61,11 +67,9 @@ if (isset($_GET['id'])) {
 
             <div class="form-group">
                 <label for="pfp">Photo de profil</label>
-                <img src="<?= $user['pfp'] ?>" alt="Photo de profil" width="25" height="25">
+                <img src="<?= htmlspecialchars($user['pfp']) ?>" alt="Photo de profil" width="25" height="25">
                 <input type="file" id="pfp" name="pfp">
             </div>
-
-               
 
             <button type="submit">Confirmer modification</button>
         </form>
