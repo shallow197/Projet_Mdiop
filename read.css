@@ -1,87 +1,88 @@
-/* style2.css */
+/* Nouveau style: turquoise et rose */
 
-/* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    background-color: #e91e63;
+    color: white;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #376f76;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 25px 0;
+    font-size: 24px;
+    width: 100%;
 }
 
 nav {
-    text-align: center;
     margin: 20px 0;
 }
 
 nav a {
     text-decoration: none;
-    color: #4CAF50;
-    margin: 0 15px;
-    font-size: 18px;
+    color: white;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 200px); /* Ajuster en fonction de la hauteur du header et du footer */
-}
-
-.content {
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    color: #333;
 }
 
 h2 {
-    text-align: center;
-    color: #4CAF50;
-    margin-bottom: 20px;
+    color: #0097a7;
+    margin-bottom: 15px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 2px solid #0097a7;
 }
 
 th, td {
-    padding: 12px;
-    text-align: left;
+    padding: 15px;
+    text-align: center;
 }
 
 th {
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #0097a7;
+    color: white;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f8bbd0;
 }
 
 tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #f48fb1;
 }
 
 a {
-    color: #4CAF50;
-    text-decoration: none;
+    color: #0097a7;
+    font-weight: bold;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #e91e63;
 }
