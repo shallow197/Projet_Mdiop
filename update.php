@@ -40,8 +40,8 @@ mysqli_close($link);
 </header>
 
 <nav>
-    <a href="http://localhost:8080/projet_php/read.php">Liste des utilisateurs</a>
-    <a href="http://localhost:8080/projet_php/create.html">Ajout d'utilisateurs</a>
+    <a href="read.php">Liste des utilisateurs</a>
+    <a href="create.html">Ajout d'utilisateurs</a>
 </nav>
 
 <div class="container">
