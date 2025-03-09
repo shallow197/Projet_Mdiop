@@ -34,19 +34,19 @@ if (isset($_GET['id'])) {
 </header>
 
 <nav>
-    <a href="http://localhost:8080/projet_diop/utilisateur/utilisateur/read.php">Liste des utilisateurs</a>
-    <a href="http://localhost:8080/projet_diop/utilisateur/utilisateur/create.html">Ajout des utilisateurs</a>
+    <a href="http://localhost:8080/projet_php/read.php">Liste des utilisateurs</a>
+    <a href="http://localhost:8080/projet_php/create.html">Ajout des utilisateurs</a>
 </nav>
 
 <div class="container">
     <div class="content">
         <h2>Modifier les informations</h2>
-        <form action="update_utilisateurs.php" method="post">
+        <form action="update_utilisateurs.php" enctype="multipart/form-data" method="post">
             <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
 
             <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" value="<?= htmlspecialchars($user['nom']) ?>" required>
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" value="<?= htmlspecialchars($user['nom']) ?>" required>
             </div>
 
             <div class="form-group">
@@ -61,7 +61,7 @@ if (isset($_GET['id'])) {
 
             <div class="form-group">
                 <label for="pfp">Photo de profil</label>
-                <img src="<?= htmlspecialchars($user['pfp']) ?>" alt="Photo de profil" width="150" height="80">
+                <img src="<?= $user['pfp'] ?>" alt="Photo de profil" width="50" height="50">
                 <input type="file" id="pfp" name="pfp">
             </div>
 
