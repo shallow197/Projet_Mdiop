@@ -40,7 +40,7 @@ include 'connection.php';
 
                 if ($result->num_rows > 0) {
                    while ($row = mysqli_fetch_assoc($result)) {
-                        $profile_pic = !empty($row["pfp"]) ? htmlspecialchars($row["pfp"]) : "uploads/image.png";
+                        $profile_pic = htmlspecialchars($row["pfp"]);
                         
                         echo "<tr>
                                 <td>" . htmlspecialchars($row["id"]) . "</td>
@@ -57,10 +57,10 @@ include 'connection.php';
                               </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='6'>Pas d'utilisateur disponible</td></tr>";
+                    echo "<tr><td>Pas d'utilisateur disponible</td></tr>";
                 }
 
-                $conn->close();
+                mysqli_close($link);
             ?>
             </tbody>
         </table>
