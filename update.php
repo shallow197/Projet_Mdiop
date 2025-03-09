@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
     $user = $result->fetch_assoc();
 
     if (!$user) {
-        echo "Utilisateur non trouvé.";
+        echo "Utilisateur inexistant.";
         exit();
     }
 } else {
@@ -30,12 +30,12 @@ if (isset($_GET['id'])) {
 <body>
 
 <header>
-    <h1>Modifier l'utilisateur</h1>
+    <h1>Modifier infos utilisateur</h1>
 </header>
 
 <nav>
     <a href="http://localhost:8080/projet_php/read.php">Liste des utilisateurs</a>
-    <a href="http://localhost:8080/projet_php/create.html">Ajout des utilisateurs</a>
+    <a href="http://localhost:8080/projet_php/create.html">Ajout d' utilisateurs</a>
 </nav>
 
 <div class="container">
@@ -61,7 +61,7 @@ if (isset($_GET['id'])) {
 
             <div class="form-group">
                 <label for="pfp">Photo de profil</label>
-                <img src="<?= $user['pfp'] ?>" alt="Photo de profil" width="50" height="50">
+                <img src="<?= $user['pfp'] ?>" alt="Photo de profil" width="25" height="25">
                 <input type="file" id="pfp" name="pfp">
             </div>
 
