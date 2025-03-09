@@ -56,7 +56,7 @@ include 'connection.php';
                               </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='6'>Pas d'utilisateur disponible</td></tr>";
+                    echo "<tr><td>Pas d'utilisateur disponible</td></tr>";
                 }
 
                 mysqli_close($link);
