@@ -49,8 +49,8 @@ include 'connection.php';
                                 <td><img src='" . $profile_pic . "' width='50' height='50' style='border-radius: 50%;'></td>
 
                                 <td>
-                                    <a href='update.php?id=" . htmlspecialchars($row["id"]) . "'>📝modifier</a><br> 
-                                    <a href='delete.php?id=" . htmlspecialchars($row["id"]) . "' onclick='return confirm(\"Êtes-vous sûr(e) de vouloir supprimer cet utilisateur ?\");'>🚮supprimer</a>
+                                    <a href='update.php?id=" . htmlspecialchars($row["id"]) . "'>modifier</a><br> 
+                                    <a href='delete.php?id=" . htmlspecialchars($row["id"]) . "' onclick='return confirm(\"Êtes-vous sûr(e) de vouloir supprimer cet utilisateur ?\");'>supprimer</a>
                                 </td>
                               </tr>";
                     }
@@ -67,4 +67,3 @@ include 'connection.php';
 
 </body>
 </html>
-
