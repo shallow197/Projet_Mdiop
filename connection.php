@@ -3,12 +3,10 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbname = "essai1";
+$bdd = "essai1";
 
 
-$conn =  new mysqli($server, $username, $password, $dbname);
+$conn =  new mysqli($host, $user, $password, $bdd);
 
-if ($conn->connect_error) 
-    die("La connexion a échoué: " . $conn->connect_error);
 
 ?>
