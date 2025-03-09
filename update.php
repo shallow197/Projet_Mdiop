@@ -3,10 +3,10 @@ include 'connection.php';
 
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']); 
-    $sql = $conn->prepare("SELECT * FROM users WHERE id = ?");
-    $sql->bind_param("i", $id);
-    $sql->execute();
-    $result = $sql->get_result();
+    $query = $link->prepare("SELECT * FROM users WHERE id = ?");
+    $query->bind_param("i", $id);
+    $query->execute();
+    $result = $query->get_result();
     $user = $result->fetch_assoc();
 
     if (!$user) {
