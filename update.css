@@ -1,8 +1,8 @@
-/* Nouveau style: dégradé bleu clair, indigo et violet */
+
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #64b5f6, #3f51b5, #8e24aa);
+    background: linear-gradient(to right, #64b5f6, #3f51b5, #8e24aa); 
     color: white;
     margin: 0;
     padding: 0;
@@ -14,12 +14,14 @@ body {
 }
 
 header {
-    background: linear-gradient(to right, #2196f3, #3f51b5);
+    background: linear-gradient(to right, #2196f3, #3f51b5); 
     color: white;
     text-align: center;
     padding: 25px 0;
     font-size: 24px;
     width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7); 
 }
 
 nav {
@@ -35,10 +37,10 @@ nav a {
 }
 
 .container {
-    background-color: white;
+    background: linear-gradient(to right, #64b5f6, #3f51b5, #8e24aa); 
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7); 
     width: 90%;
     max-width: 600px;
     text-align: center;
@@ -66,16 +68,17 @@ th, td {
 }
 
 th {
-    background: linear-gradient(to right, #3f51b5, #8e24aa);
+    background: linear-gradient(to right, #3f51b5, #8e24aa); 
     color: white;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7); 
 }
 
 tbody tr:nth-child(even) {
-    background-color: #b39ddb;
+    background-color: #f1f1f1;
 }
 
 tbody tr:hover {
-    background-color: #9575cd;
+    background-color: #e0e0e0; 
 }
 
 a {
@@ -84,5 +87,5 @@ a {
 }
 
 a:hover {
-    color: #2196f3;
+    color: #2196f3; 
 }
