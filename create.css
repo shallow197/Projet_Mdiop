@@ -1,8 +1,8 @@
-/* Nouveau style: dégradé gris-jaune */
+/* Nouveau style: dégradé rose-turquoise */
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #757575, #ffeb3b);
+    background: linear-gradient(to right, #ff69b4, #40e0d0);
     color: white;
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    background: linear-gradient(to right, #616161, #fbc02d);
+    background: linear-gradient(to right, #d81b60, #00bcd4);
     color: white;
     text-align: center;
     padding: 25px 0;
@@ -46,7 +46,7 @@ nav a {
 }
 
 h2 {
-    color: #616161;
+    color: #d81b60;
     margin-bottom: 15px;
 }
 
@@ -57,7 +57,7 @@ table {
 }
 
 table, th, td {
-    border: 2px solid #616161;
+    border: 2px solid #d81b60;
 }
 
 th, td {
@@ -66,23 +66,23 @@ th, td {
 }
 
 th {
-    background: linear-gradient(to right, #616161, #fbc02d);
+    background: linear-gradient(to right, #d81b60, #00bcd4);
     color: white;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: #ffb6c1;
 }
 
 tbody tr:hover {
-    background-color: #ffee58;
+    background-color: #87e0e0;
 }
 
 a {
-    color: #616161;
+    color: #d81b60;
     font-weight: bold;
 }
 
 a:hover {
-    color: #fbc02d;
+    color: #00bcd4;
 }
