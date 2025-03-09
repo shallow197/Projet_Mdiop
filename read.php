@@ -13,19 +13,18 @@ include 'connection.php';
 <body>
 
 <header>
-    <h1>Liste des utilisateurs</h1>
+    <h1>Liste</h1>
 </header>
 
 <nav>
     <a href="http://localhost:8080/projet_php/read.php">Liste des utilisateurs</a>
-    <a href="http://localhost:8080/projet_php/create.html">Ajout des utilisateurs</a>
+    <a href="http://localhost:8080/projet_php/create.html">Ajout d'utilisateurs</a>
 </nav>
 
 <div class="container">
     <div class="content">
-        <h2>Utilisateurs inscrits</h2>
+        <h2>Utilisateurs</h2>
         <table>
-            <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
@@ -34,14 +33,13 @@ include 'connection.php';
                     <th>Photo de profil</th>
                     <th>Action</th>
                 </tr>
-            </thead>
             <tbody>
             <?php
                 $sql = "SELECT id, nom, prenom, login, pfp FROM users";
-                $result = $conn->query($sql);
+                $result = mysqli_query($link, $query);
 
                 if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
+                   while ($row = mysqli_fetch_assoc($result)) {
                         $profile_pic = !empty($row["pfp"]) ? htmlspecialchars($row["pfp"]) : "uploads/image.png";
                         
                         echo "<tr>
