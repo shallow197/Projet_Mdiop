@@ -50,14 +50,13 @@ include 'connection.php';
                                 <td><img src='" . $profile_pic . "' width='50' height='50' style='border-radius: 50%;'></td>
 
                                 <td>
-                                    <a href='http://localhost:8080/projet_php/update.php?id=" . htmlspecialchars($row["id"]) . "'>✏ Modifier</a>
-                                    |
-                                    <a href='http://localhost:8080/projet_php/delete.php?id=" . htmlspecialchars($row["id"]) . "' onclick='return confirm(\"Êtes-vous sur(e) de vouloir supprimer cet utilisateur ?\");'>🗑 Supprimer</a>
+                                    <a href='http://localhost:8080/projet_php/update.php?id=" . htmlspecialchars($row["id"]) . "'>📝modifier</a>
+                                    <a href='http://localhost:8080/projet_php/delete.php?id=" . htmlspecialchars($row["id"]) . "' onclick='return confirm(\"Êtes-vous sûr(e) de vouloir supprimer cet utilisateur ?\");'>🚮supprimer</a>
                                 </td>
                               </tr>";
                     }
                 } else {
-                    echo "<tr><td>Pas d'utilisateur disponible</td></tr>";
+                    echo "<tr><td colspan='6'>Pas d'utilisateur disponible</td></tr>";
                 }
 
                 mysqli_close($link);
