@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
         echo "<script>
 	      alert('Utilisateur ajouté avec succès!'); 
-              header( Location: 'http://localhost:8080/projet_php/create.html');
+          window.location.href='create.html';
  	      </script>";
     } 
     else 
