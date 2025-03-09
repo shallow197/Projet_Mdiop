@@ -1,17 +1,16 @@
 <?php
 include 'connection.php';
 
-if (isset($_GET['id'])) {
+if(isset($_GET['id'])) {
     $id = $_GET['id'];
-    $sql = "DELETE FROM users WHERE id = " . $id;
+    $query = "DELETE FROM users WHERE id = " . $id;
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Utilisateurs supprimé avec succès.";
-    } else {
-        echo "Erreur lors de la suppression : " . $conn->error;
-    }
+    if($query) 
+        echo "Utilisateur supprimé avec succès";
+        echo "Erreur lors de la suppression : " .  mysqli_error($link);;
 
-    $conn->close();
+
+     mysqli_close($link);
     header("Location: read.php");
     exit();
 }
