@@ -1,8 +1,8 @@
-/* Nouveau style: turquoise et rose */
+/* Nouveau style: dégradé bleu clair, indigo et violet */
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #b51cc0;
+    background: linear-gradient(to right, #64b5f6, #3f51b5, #8e24aa);
     color: white;
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    background-color: #2bc1e2;
+    background: linear-gradient(to right, #2196f3, #3f51b5);
     color: white;
     text-align: center;
     padding: 25px 0;
@@ -46,7 +46,7 @@ nav a {
 }
 
 h2 {
-    color: #2358dc;
+    color: #3f51b5;
     margin-bottom: 15px;
 }
 
@@ -57,7 +57,7 @@ table {
 }
 
 table, th, td {
-    border: 2px solid #0097a7;
+    border: 2px solid #3f51b5;
 }
 
 th, td {
@@ -66,23 +66,23 @@ th, td {
 }
 
 th {
-    background-color: #0097a7;
+    background: linear-gradient(to right, #3f51b5, #8e24aa);
     color: white;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f8bbd0;
+    background-color: #b39ddb;
 }
 
 tbody tr:hover {
-    background-color: #8b41ec;
+    background-color: #9575cd;
 }
 
 a {
-    color: #0097a7;
+    color: #3f51b5;
     font-weight: bold;
 }
 
 a:hover {
-    color: #e91e63;
+    color: #2196f3;
 }
