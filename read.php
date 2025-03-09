@@ -17,8 +17,8 @@ include 'connection.php';
 </header>
 
 <nav>
-    <a href="http://localhost:8080/projet_diop/utilisateur/utilisateur/read.php">Liste des utilisateurs</a>
-    <a href="http://localhost:8080/projet_diop/utilisateur/utilisateur/create.html">Ajout des utilisateurs</a>
+    <a href="http://localhost:8080/projet_php/read.php">Liste des utilisateurs</a>
+    <a href="http://localhost:8080/projet_php/create.html">Ajout des utilisateurs</a>
 </nav>
 
 <div class="container">
@@ -42,17 +42,19 @@ include 'connection.php';
 
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
+                        $profile_pic = !empty($row["pfp"]) ? htmlspecialchars($row["pfp"]) : "uploads/image.png";
+                        
                         echo "<tr>
                                 <td>" . htmlspecialchars($row["id"]) . "</td>
                                 <td>" . htmlspecialchars($row["nom"]) . "</td>
                                 <td>" . htmlspecialchars($row["prenom"]) . "</td>
                                 <td>" . htmlspecialchars($row["login"]) . "</td>
-                                <td><img src='" . htmlspecialchars($row["pfp"]) . "' alt='Photo de profil' width='150' height='80'></td>
+                                <td><img src='" . $profile_pic . "' width='50' height='50' style='border-radius: 50%;'></td>
 
                                 <td>
-                                    <a href='http://localhost:8080/projet_diop/utilisateur/utilisateur/update.php?id=" . htmlspecialchars($row["id"]) . "'>✏ Modifier</a>
+                                    <a href='http://localhost:8080/projet_php/update.php?id=" . htmlspecialchars($row["id"]) . "'>✏ Modifier</a>
                                     |
-                                    <a href='http://localhost:8080/projet_diop/utilisateur/utilisateur/delete.php?id=" . htmlspecialchars($row["id"]) . "' onclick='return confirm(\"Êtes-vous sur(e) de vouloir supprimer cet utilisateur ?\");'>🗑 Supprimer</a>
+                                    <a href='http://localhost:8080/projet_php/delete.php?id=" . htmlspecialchars($row["id"]) . "' onclick='return confirm(\"Êtes-vous sur(e) de vouloir supprimer cet utilisateur ?\");'>🗑 Supprimer</a>
                                 </td>
                               </tr>";
                     }
