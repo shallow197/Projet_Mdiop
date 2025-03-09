@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
     if ($_FILES["pfp"]["name"] != "") {
         $chemin = "pics/"; 
-        $new_file = $target_dir . basename($_FILES["pfp"]["name"]);
+        $new_file = $chemin . basename($_FILES["pfp"]["name"]);
         $extension = strtolower(pathinfo($new_file, PATHINFO_EXTENSION));
 
       
