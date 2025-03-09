@@ -6,7 +6,7 @@ $password = "";
 $bdd = "essai1";
 
 
-$conn =  new mysqli($host, $user, $password, $bdd);
+$link =  mysqli_connect($host, $user, $password, $bdd) or die("erreur de connexion au serveur");;
 
 
 ?>
