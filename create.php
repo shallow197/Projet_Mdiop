@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result) 
     {
         echo "<script>
-	      alert('Utilisateur ajouté avec succès!'); 
+	      alert('Nouvel utilisateur enregistré avec succès!'); 
           window.location.href='create.html';
  	      </script>";
     } 
