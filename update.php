@@ -1,28 +1,13 @@
 <?php
 include 'connection.php';
 
-if (isset($_GET['id'])) 
-{
-    $id = intval($_GET['id']); 
-    $query = mysqli_prepare($link, "SELECT * FROM users WHERE id = ?");
-    mysqli_stmt_bind_param($query, "i", $id);
-    mysqli_stmt_execute($query);
-    $result = mysqli_stmt_get_result($query);
+
+    $id = $_GET['id']; 
+    $query = "SELECT * FROM users WHERE id = " . $id;
+    $result = mysqli_query($link, $query);
     $user = mysqli_fetch_assoc($result);
 
-    if (!$user) 
-    {
-        echo "Utilisateur inexistant.";
-        exit();
-    }
-} 
- else 
- {
-    echo "ID invalide.";
-    exit();
- }
-
-mysqli_close($link);
+    mysqli_close($link);
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +25,8 @@ mysqli_close($link);
 </header>
 
 <nav>
-    <a href="read.php">Liste des utilisateurs</a>
-    <a href="create.html">Ajout d'utilisateurs</a>
+<a href="read.php" class="nav-button">Liste des utilisateurs</a>
+<a href="create.html" class="nav-button">Ajout d'utilisateurs</a>
 </nav>
 
 <div class="container">
@@ -50,14 +35,15 @@ mysqli_close($link);
         <form action="update_utilisateurs.php" enctype="multipart/form-data" method="post">
             <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
 
+
             <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" value="<?= htmlspecialchars($user['nom']) ?>" required>
+                <label for="prenom">Prenom</label>
+                <input type="text" id="prenom" name="prenom" pattern="[A-Za-zÀ-ÿ]+" title="Le prénom ne doit contenir que des lettres." value="<?= htmlspecialchars($user['prenom']) ?>" required>
             </div>
 
             <div class="form-group">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" value="<?= htmlspecialchars($user['prenom']) ?>" required>
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" pattern="[A-Za-zÀ-ÿ]+" title="Le nom ne doit contenir que des lettres." value="<?= htmlspecialchars($user['nom']) ?>" required>
             </div>
 
             <div class="form-group">
@@ -67,8 +53,8 @@ mysqli_close($link);
 
             <div class="form-group">
                 <label for="pfp">Photo de profil</label>
-                <img src="<?= htmlspecialchars($user['pfp']) ?>" alt="Photo de profil" width="50" height="50">
-                <input type="file" id="pfp" name="pfp">
+                <img src="<?= htmlspecialchars($user['pfp']) ?>" width="50" height="50">
+                <input type="file" id="pfp" name="pfp" accept="image/jpeg, image/png, image/gif"><br><br>
             </div>
 
             <button type="submit">Confirmer modification</button>
