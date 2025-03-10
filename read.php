@@ -17,7 +17,9 @@ include 'connection.php';
 </header>
 
 <nav>
-    <a href="create.html">Ajout d'utilisateurs</a>
+    <a href="create.html" class="nav-button">Ajout d'utilisateurs</a>
+</nav>
+
 </nav>
 
 <div class="container">
@@ -34,11 +36,13 @@ include 'connection.php';
                 </tr>
             <tbody>
             <?php
-                $query = "SELECT id, nom, prenom, login, pfp FROM users";
+                $query = "SELECT id, nom, prenom, login, pfp FROM users ORDER BY id";
                 $result = mysqli_query($link, $query);
 
-                if ($result->num_rows > 0) {
-                   while ($row = mysqli_fetch_assoc($result)) {
+                if ($result->num_rows > 0) 
+                {
+                   while ($row = mysqli_fetch_assoc($result)) 
+                   {
                     $profile_pic = htmlspecialchars($row["pfp"]);
                         
                         echo "<tr>
@@ -46,16 +50,17 @@ include 'connection.php';
                                 <td>" . htmlspecialchars($row["nom"]) . "</td>
                                 <td>" . htmlspecialchars($row["prenom"]) . "</td>
                                 <td>" . htmlspecialchars($row["login"]) . "</td>
-                                <td><img src='" . $profile_pic . "' width='50' height='50' style='border-radius: 50%;'></td>
-
+                                <td><img src='". $profile_pic."'width='50' height='50' style='border-radius: 50%;'></td>
                                 <td>
                                     <a href='update.php?id=" . htmlspecialchars($row["id"]) . "'>modifier</a><br> 
                                     <a href='delete.php?id=" . htmlspecialchars($row["id"]) . "' onclick='return confirm(\"Êtes-vous sûr(e) de vouloir supprimer cet utilisateur ?\");'>supprimer</a>
                                 </td>
                               </tr>";
                     }
-                } else {
-                    echo "<tr><td colspan='6'>Pas d'utilisateur disponible</td></tr>";
+                } 
+                else 
+                {
+                    echo "<tr><td colspan='6'>Aucun utilisateur inscrit.</td></tr>";
                 }
 
                 mysqli_close($link);
