@@ -1,22 +1,16 @@
 <?php
 include 'connection.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = intval($_POST['id']);
+
+    $id = $_POST['id'];
     $nom = $_POST["name"];
     $prenom = $_POST["prenom"];
     $login = $_POST["login"];
 
-    if ($_FILES["pfp"]["name"] != "") {
+    if ($_FILES["pfp"]["name"] != "") 
+    {
         $chemin = "pics/"; 
         $new_file = $chemin . basename($_FILES["pfp"]["name"]);
-        $extension_image = strtolower(pathinfo($new_file, PATHINFO_EXTENSION));
-
-        $extensions = ["jpg", "jpeg", "png", "gif"];
-        if (!in_array($extension_image, $extensions)) 
-        {
-            die("La photo de profil ne peut être qu'une image !");
-        }
 
         if (!move_uploaded_file($_FILES["pfp"]["tmp_name"], $new_file)) 
         {
@@ -24,17 +18,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         
-        $query = mysqli_prepare($link, "UPDATE users SET nom=?, prenom=?, login=?, pfp=? WHERE id=?");
-        mysqli_stmt_bind_param($query, "ssssi", $nom, $prenom, $login, $new_file, $id);
+        $query = "UPDATE users SET nom='$nom', prenom='$prenom', login='$login', pfp='$new_file' WHERE id=$id";
+        $result = mysqli_query($link, $query);
+        
     } 
     else 
-    {
+    {        
+        $query = "UPDATE users SET nom='$nom', prenom='$prenom', login='$login' WHERE id=$id";
+        $result = mysqli_query($link, $query);
         
-        $query = mysqli_prepare($link, "UPDATE users SET nom=?, prenom=?, login=? WHERE id=?");
-        mysqli_stmt_bind_param($query, "sssi", $nom, $prenom, $login, $id);
     }
 
-    if (mysqli_stmt_execute($query)) 
+    if ($result) 
     {
         echo "<script>
              alert('Informations modifiées avec succès !'); 
@@ -46,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Une erreur a été rencontrée lors de la modfication. Les nouvelles données n'ont pas été sauvegardées : " . mysqli_error($link);
     }
 
-    mysqli_stmt_close($query);
     mysqli_close($link);
-}
+
 ?>
