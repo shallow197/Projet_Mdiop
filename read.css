@@ -1,1 +1,91 @@
+/* Nouveau style: Dégradé gris-jaune avec Néomorphisme */
 
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #757575, #ffeb3b); /* Dégradé gris-jaune */
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    background: linear-gradient(to right, #616161, #fbc02d); /* Dégradé pour l'en-tête */
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 24px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7); /* Ombres subtiles pour néomorphisme */
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container {
+    background: linear-gradient(to right, #757575, #ffeb3b); /* Dégradé de fond */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7); /* Ombres subtiles pour néomorphisme */
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #616161;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 2px solid #616161;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(to right, #616161, #fbc02d); /* Dégradé pour l'en-tête du tableau */
+    color: white;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7); /* Ombres internes pour néomorphisme */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f5f5f5; /* Légère variation de fond pour les lignes */
+}
+
+tbody tr:hover {
+    background-color: #ffee58; /* Fond plus clair au survol */
+}
+
+a {
+    color: #616161;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #fbc02d; /* Changement de couleur au survol */
+}
