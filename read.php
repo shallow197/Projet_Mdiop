@@ -18,7 +18,7 @@ include 'connection.php';
 
 <nav>
     <a href="create.html" class="nav-button">Ajout d'utilisateurs</a>
-    <a href="deconnect.php" class="nav-button">>Se déconnecter</a>
+    <a href="deconnect.php" class="nav-button">Se déconnecter</a>
 </nav>
 
 <div class="container">
