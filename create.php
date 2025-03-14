@@ -17,7 +17,7 @@
             
     }
 
-    $query = "INSERT INTO users(nom, prenom, login, password, pfp, role)  VALUES ('$name', '$prenom', '$login', '$password', '$profile_pic', 'simple')";
+    $query = "INSERT INTO users(nom, prenom, login, password, pfp)  VALUES ('$name', '$prenom', '$login', '$password', '$profile_pic')";
     $result = mysqli_query($link, $query);
   
     if ($result) 
