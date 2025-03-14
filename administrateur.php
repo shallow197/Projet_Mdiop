@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (isset($_POST['login'])) {
+    $_SESSION['login'] = $_POST['login'];
+}
 include 'connection.php';
 
 $login = $_POST['login'];
@@ -18,7 +22,7 @@ $result = mysqli_query($link, $query);
     {
     echo "<script>
              alert('Login ou mot de passe incorrect !'); 
-             window.location.href='admin.html';
+             window.location.href='admin.php';
              </script>";
     } 
 
