@@ -8,10 +8,10 @@ $login = isset($_SESSION['login']) ? htmlspecialchars($_SESSION['login']) : '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin.css">
-    <title>Connexion Admin</title>
+    <title>Accueil</title>
 </head>
 <body>
-    <h2>Connexion Admin</h2>
+    <h2>Connexion</h2>
     <form action="administrateur.php" method="post">
         <label for="login">Login :</label>
         <input type="text" id="login" name="login" value="<?php echo $login; ?>" required><br><br>
