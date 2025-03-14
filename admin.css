@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff7eb3, #ffcc29);
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e0e5ec;
+}
+
+header {
+    background: linear-gradient(to right, #ff7eb3, #ffcc29);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 24px;
+    width: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.3);
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container {
+    background-color: #e0e5ec;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.3); 
+    max-width: 600px;
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #f04d91;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.form-group label {
+    width: 30%;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.form-group input {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ff7eb3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ffcc29;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 2px solid #ff7eb3;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(to right, #ff7eb3, #ffcc29);
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffc1e3;
+}
+
+tbody tr:hover {
+    background-color: #ffeb99;
+}
+
+a {
+    color: #ff7eb3;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffcc29;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ff7eb3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #ffcc29;
+}
