@@ -1,5 +1,5 @@
 <?php
 session_start();
-    header("Location: admin.html");
+    header("Location: admin.php");
     exit();
 ?>
