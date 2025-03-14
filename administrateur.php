@@ -13,9 +13,9 @@ $result = mysqli_query($link, $query);
 
     if (mysqli_num_rows($result) > 0) 
     {
-        echo "<script>
-             alert('Bienvenue adminstrateur !'); 
+        echo "<script> 
              window.location.href='create.html';
+             alert('Bienvenue adminstrateur !');
              </script>";
     } 
     else 
