@@ -1,7 +1,8 @@
 <?php
 include 'connection.php';
 
-if (isset($_POST['users_to_delete'])) {
+if (isset($_POST['users_to_delete'])) 
+{
 
     $users_to_delete = $_POST['users_to_delete'];
 
@@ -34,4 +35,3 @@ else
 
 mysqli_close($link);
 ?>
-
