@@ -1,7 +1,12 @@
 <?php
 session_start();
-include 'connection.php';
+if (!isset($_SESSION['login'])) 
+{
+    header("Location: admin.php");
+    exit();
+}
 
+include 'connection.php';
 
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 20)) 
 {
@@ -42,7 +47,7 @@ $_SESSION['last_activity'] = time();
 
 
 <nav>
-    <a href="create.html" class="nav-button">Ajout d'utilisateurs</a>
+    <a href="create.php" class="nav-button">Ajout d'utilisateurs</a>
     <a href="deconnect.php" class="nav-button">Se déconnecter</a>
 </nav>
 
@@ -113,4 +118,3 @@ function toggle(source) {
 
 </body>
 </html>
-
