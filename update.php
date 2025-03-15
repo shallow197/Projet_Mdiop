@@ -1,5 +1,11 @@
 <?php
 session_start();
+if (!isset($_SESSION['login'])) 
+{
+    header("Location: admin.php");
+    exit();
+}
+
 include 'connection.php';
 
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 20)) 
@@ -56,7 +62,7 @@ mysqli_close($link);
 
 <nav>
 <a href="read.php" class="nav-button">Liste des utilisateurs</a>
-<a href="create.html" class="nav-button">Ajout d'utilisateurs</a>
+<a href="create.php" class="nav-button">Ajout d'utilisateurs</a>
 <a href="deconnect.php" class="nav-button">Se déconnecter</a>
 </nav>
 
@@ -94,4 +100,3 @@ mysqli_close($link);
 
 </body>
 </html>
-
