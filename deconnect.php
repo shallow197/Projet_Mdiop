@@ -1,5 +1,8 @@
 <?php
 session_start();
-    header("Location: admin.php");
-    exit();
+session_unset(); 
+session_destroy(); 
+
+header("Location: admin.php");
+exit();
 ?>
