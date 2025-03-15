@@ -130,3 +130,17 @@ a:hover {
     color: #2196f3; 
 }
 
+.nav-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #9d14d7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #0966a0;
+}
