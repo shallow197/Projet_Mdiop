@@ -16,6 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `admins`
+--
+
+DROP TABLE IF EXISTS `admins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admins` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `prenom` varchar(30) DEFAULT NULL,
+  `nom` varchar(20) DEFAULT NULL,
+  `password` varchar(64) DEFAULT NULL,
+  `login` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admins`
+--
+
+LOCK TABLES `admins` WRITE;
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+INSERT INTO `admins` VALUES (4,'sirima','mbodj','a326a4df816011ea8e7be900add6711f1b6f2ff8dfe31bb420a2d25c3582c350','siri'),(3,'Cheikh','Lô','ddfb9b0b2ef02e17d611d2ceeb70071e448e69f3bf9ce234dc70d2c534bfe46b','shallow');
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -30,7 +57,7 @@ CREATE TABLE `users` (
   `password` varchar(100) DEFAULT NULL,
   `pfp` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7975 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +66,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (4,'nobara','kugisaki','ra','$2y$10$MmDfFHKlCundrBvr/bXKTu/QeLPwXl.GoRqyt.h1c41injYGpkRhK','uploads/Capture d’écran 2025-03-08 162613.png');
+INSERT INTO `users` VALUES (7970,'Lo','cheikh','shallow','$2y$10$DQTk6KbO2y9Nz008ya/OEubE1Mw1zFMEVOd3HiexQgzPYTdQ5n/e6','pics/dio1.jpg'),(7973,'Valentine','Cat','ari','$2y$10$Ja25OPRCZCXaekfjcdSnMeVIiGZ2L/ANvPExH/m/jVb50lz/cesHy','pics/ari.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-08 21:28:44
+-- Dump completed on 2025-03-15 11:43:39
