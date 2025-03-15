@@ -6,9 +6,9 @@ if (isset($_POST['login'])) {
 include 'connection.php';
 
 $login = $_POST['login'];
-$hashed_password = hash('sha256', $_POST['password']);
+$mdp_hashe = hash('sha256', $_POST['password']);
 
-$query = "SELECT * FROM admins WHERE login = '$login' AND password = '$hashed_password'";
+$query = "SELECT * FROM admins WHERE login = '$login' AND password = '$mdp_hashe'";
 $result = mysqli_query($link, $query);
 
     if (mysqli_num_rows($result) > 0) 
