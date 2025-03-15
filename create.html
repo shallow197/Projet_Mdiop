@@ -5,6 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ajout</title>
+    <script>
+        let timeout;
+
+        function resetTimer() 
+        {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => 
+            {
+                alert("Vous êtes déconnecté(e) pour inactivité.");
+                window.location.href = "admin.php";
+            }, 20000); 
+        }
+
+        document.addEventListener("DOMContentLoaded", resetTimer);
+        document.addEventListener("mousemove", resetTimer);
+        document.addEventListener("keydown", resetTimer);
+    </script>
 </head>
 <body>
 
@@ -18,7 +35,7 @@
     <div class="container">
         <div class="content">
             <h2>Ajouter un utilisateur</h2>
-            <form action="create.php" ENCTYPE="multipart/form-data" method="post">
+            <form action="create.php" enctype="multipart/form-data" method="post">
 
                 <div class="form-group">
                     <label for="prenom">Prenom</label>
