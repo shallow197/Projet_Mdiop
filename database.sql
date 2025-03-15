@@ -29,7 +29,7 @@ CREATE TABLE `admins` (
   `password` varchar(64) DEFAULT NULL,
   `login` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,9 +58,9 @@ CREATE TABLE `users` (
   `pfp` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 <<<<<<< HEAD
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 =======
-) ENGINE=MyISAM AUTO_INCREMENT=7975 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7975 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 >>>>>>> 827d6a9b7841f8c0dc17529a618fc64af9e576d2
 /*!40101 SET character_set_client = @saved_cs_client */;
 
