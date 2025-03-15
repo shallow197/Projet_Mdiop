@@ -1,6 +1,7 @@
 <?php
 session_start();
-if (isset($_POST['login'])) {
+if (isset($_POST['login'])) 
+{
     $_SESSION['login'] = $_POST['login'];
 }
 include 'connection.php';
@@ -13,11 +14,14 @@ $result = mysqli_query($link, $query);
 
     if (mysqli_num_rows($result) > 0) 
     {
-        echo "<script> 
+    $admin = mysqli_fetch_assoc($result);
+    $prenom_admin = htmlspecialchars($admin['prenom']);
+    $nom_admin = htmlspecialchars($admin['nom']);
+    echo "<script>
+             alert('Bienvenue administrateur $prenom_admin $nom_admin!');
              window.location.href='create.html';
-             alert('Bienvenue adminstrateur !');
-             </script>";
-    } 
+          </script>";
+    }
     else 
     {
     echo "<script>
