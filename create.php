@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['login']))
+ {
+    header("Location: admin.php"); 
+    exit();
+ }
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un utilisateur</title>
+</head>
+
+</html>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +55,7 @@
     <div class="container">
         <div class="content">
             <h2>Ajouter un utilisateur</h2>
-            <form action="create.php" enctype="multipart/form-data" method="post">
+            <form action="creation.php" enctype="multipart/form-data" method="post">
 
                 <div class="form-group">
                     <label for="prenom">Prenom</label>
