@@ -1,5 +1,16 @@
 <?php
+session_start();
 include 'connection.php';
+
+
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 20)) 
+{
+    session_unset();
+    session_destroy();
+ 
+}
+
+$_SESSION['last_activity'] = time();
 ?>
 
 <!DOCTYPE html>
@@ -9,12 +20,26 @@ include 'connection.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Liste des utilisateurs</title>
+    <script>
+        let timeout;
+
+        function resetTimer() 
+        {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => 
+            {
+                alert("Vous êtes déconnecté(e) pour inactivité.");
+                window.location.href = "admin.php"; 
+            }, 20000); 
+        }
+
+        document.addEventListener("DOMContentLoaded", resetTimer);
+        document.addEventListener("mousemove", resetTimer);
+        document.addEventListener("keydown", resetTimer);
+    </script>
 </head>
 <body>
 
-<header>
-    <h1>Liste d'utilisateurs</h1>
-</header>
 
 <nav>
     <a href="create.html" class="nav-button">Ajout d'utilisateurs</a>
@@ -41,8 +66,10 @@ include 'connection.php';
                     $query = "SELECT id, nom, prenom, login, pfp FROM users ORDER BY id";
                     $result = mysqli_query($link, $query);
 
-                    if ($result->num_rows > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
+                    if ($result->num_rows > 0) 
+                    {
+                        while ($row = mysqli_fetch_assoc($result)) 
+                        {
                             $profile_pic = htmlspecialchars($row["pfp"]);
 
                             echo "<tr>
@@ -58,7 +85,9 @@ include 'connection.php';
                                     </td>
                                   </tr>";
                         }
-                    } else {
+                    } 
+                    else 
+                    {
                         echo "<tr><td colspan='7'>Aucun utilisateur inscrit.</td></tr>";
                     }
 
