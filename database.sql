@@ -57,7 +57,7 @@ CREATE TABLE `users` (
   `password` varchar(100) DEFAULT NULL,
   `pfp` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,6 +66,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (26,'wayne','bruce','batman','$2y$10$hcLgkhEnLDwjk0iFct5mAuRVlGvjnwtBmi6KKN5yZmiivQgqAV6wi','pics/batman.jpg'),(27,'man','spider','spidey','$2y$10$sJJhI/F.0CrI6TWkYAuAc.yMbBxdX/mw1CRVJtMksnPnSVEzuyMMG','pics/spider.jpg'),(28,'Valentine','Cat','ari','$2y$10$EoHMLoebdhCNmOL6PIoY1.IrvlgwkJzwnA.ymHSIjlUmBEqD7BDy.','pics/ari.jpg'),(29,'Brando','Dio','The_world','$2y$10$tlmXYBvGV7lTYFWhEQiXjODGoR4iktPIpsX87ddQ8MlQgfDQUFK1y','pics/dio1.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -78,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-15 12:43:43
+-- Dump completed on 2025-03-15 12:54:46
