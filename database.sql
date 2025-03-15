@@ -57,7 +57,7 @@ CREATE TABLE `users` (
   `password` varchar(100) DEFAULT NULL,
   `pfp` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7975 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (7970,'Lo','cheikh','shallow','$2y$10$DQTk6KbO2y9Nz008ya/OEubE1Mw1zFMEVOd3HiexQgzPYTdQ5n/e6','pics/dio1.jpg'),(7973,'Valentine','Cat','ari','$2y$10$Ja25OPRCZCXaekfjcdSnMeVIiGZ2L/ANvPExH/m/jVb50lz/cesHy','pics/ari.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-15 11:43:39
+-- Dump completed on 2025-03-15 12:43:43
