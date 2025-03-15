@@ -21,4 +21,3 @@ $login = isset($_SESSION['login']) ? htmlspecialchars($_SESSION['login']) : '';
     </form>
 </body>
 </html>
-
