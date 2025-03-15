@@ -1,13 +1,27 @@
 <?php
+session_start();
 include 'connection.php';
 
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 20)) 
+{
+    session_unset();
+    session_destroy();
+    echo "<script>
+            alert('Vous êtes déconnecté(e) pour inactivité.');
+            window.location.href='admin.php';
+          </script>";
+    exit();
+}
 
-    $id = $_GET['id']; 
-    $query = "SELECT * FROM users WHERE id = " . $id;
-    $result = mysqli_query($link, $query);
-    $user = mysqli_fetch_assoc($result);
 
-    mysqli_close($link);
+$_SESSION['last_activity'] = time();
+
+$id = $_GET['id']; 
+$query = "SELECT * FROM users WHERE id = " . $id;
+$result = mysqli_query($link, $query);
+$user = mysqli_fetch_assoc($result);
+
+mysqli_close($link);
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +31,22 @@ include 'connection.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Page de modification</title>
+    <script>
+        let timeout;
+
+        function resetTimer() 
+        {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                alert("Session expirée pour inactivité.");
+                window.location.href = "admin.php";
+            }, 20000); 
+        }
+
+        document.addEventListener("DOMContentLoaded", resetTimer);
+        document.addEventListener("mousemove", resetTimer);
+        document.addEventListener("keydown", resetTimer);
+    </script>
 </head>
 <body>
 
@@ -35,7 +65,6 @@ include 'connection.php';
         <h2>Modifier les informations</h2>
         <form action="update_utilisateurs.php" enctype="multipart/form-data" method="post">
             <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
-
 
             <div class="form-group">
                 <label for="prenom">Prenom</label>
