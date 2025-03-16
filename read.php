@@ -8,14 +8,7 @@ if (!isset($_SESSION['login']))
 
 include 'connection.php';
 
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 20)) 
-{
-    session_unset();
-    session_destroy();
- 
-}
 
-$_SESSION['last_activity'] = time();
 ?>
 
 <!DOCTYPE html>
@@ -108,9 +101,11 @@ $_SESSION['last_activity'] = time();
 </div>
 
 <script>
-function toggle(source) {
+function toggle(source) 
+{
     checkboxes = document.getElementsByName('users_to_delete[]');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
+    for(var i=0, n=checkboxes.length;i<n;i++) 
+    {
         checkboxes[i].checked = source.checked;
     }
 }
